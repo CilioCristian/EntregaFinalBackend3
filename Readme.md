@@ -1,33 +1,83 @@
 # Backend III - Entrega Final
 
-Proyecto final de la materia Backend III.
+## Descripción
 
-## 📌 Descripción
-
-Este proyecto implementa:
-
-- Tests funcionales sobre todos los endpoints del router `adoption.router.js`.
-- Dockerización completa de la aplicación.
-- Publicación de la imagen en DockerHub.
-- Documentación del proyecto mediante README.
+Este es el proyecto final de Backend III. En este trabajo hice los tests funcionales del router `adoption.router.js`, armé el Dockerfile para dockerizar la aplicación y subí la imagen a DockerHub.
 
 ---
 
-## 🧪 Tests funcionales
+## Repositorio del proyecto
 
-Se desarrollaron pruebas para los siguientes endpoints:
+GitHub:
+https://github.com/CilioCristian/EntregaFinalBackendIII
 
-- `GET /api/adoptions`
-- `GET /api/adoptions/:aid`
-- `POST /api/adoptions/:uid/:pid`
+---
 
-Los tests validan:
+## Imagen en DockerHub
 
-- Obtención correcta de todas las adopciones.
-- Manejo de errores cuando se consulta una adopción inexistente.
-- Validaciones al intentar crear una adopción.
+DockerHub:
+https://hub.docker.com/r/cristiancilio/backend3-adoptme
 
-### Ejecutar los tests
+---
+
+## Tests realizados
+
+Se probaron los siguientes endpoints:
+
+- GET `/api/adoptions`
+- GET `/api/adoptions/:aid`
+- POST `/api/adoptions/:uid/:pid`
+
+Los tests verifican:
+
+- Que se puedan obtener todas las adopciones.
+- Que se maneje correctamente el error cuando una adopción no existe.
+- Que se validen correctamente los datos al crear una adopción.
+
+---
+
+## Cómo correr los tests
 
 ```bash
+npm install
 npm test
+```
+
+---
+
+## Instrucciones para ejecutar la imagen Docker
+
+```bash
+docker build -t backend3-adoptme . 
+docker run -p 8080:8080 backend3-adoptme 
+```
+
+### Una vez levantado el contenedor, abris en el navegador:
+
+http://localhost:8080/api/adoptions
+
+### Si todo funciona correctamente, la aplicación responde con un JSON con status: "success" y el listado de adopciones.
+
+---
+
+## Evidencia de pruebas
+
+### Resultado de los tests
+
+![Resultado de los tests](./Pruebas/test.png)
+
+### Construcción de la imagen Docker
+
+![Construcción de la imagen Docker](./Pruebas/construcciondeimagen.png)
+
+### Ejecución del contenedor
+
+![Ejecución del contenedor](./Pruebas/ejecutocontenedor.png)
+
+### Aplicación funcionando en Docker
+
+![Aplicación funcionando en Docker](./Pruebas/docker.png)
+
+---
+
+
