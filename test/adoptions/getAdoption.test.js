@@ -1,5 +1,3 @@
-// Importo Supertest para simular peticiones HTTP a mi API
-import request from 'supertest';
 
 // Importo la aplicación de Express
 import app from '../../src/app.js';
