@@ -1,4 +1,7 @@
-
+// Importo la función request de Supertest.
+// Esta función me permite simular peticiones HTTP (GET, POST, etc.)
+// a mi aplicación para poder probar los endpoints automáticamente.
+import request from 'supertest';
 // Importo la aplicación de Express
 import app from '../../src/app.js';
 
